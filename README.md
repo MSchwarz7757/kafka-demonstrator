@@ -6,6 +6,14 @@ Michel: Python Confluent-Kafka message delivery from Flask website to Kafka</br>
 Johannes: Replication for Confluent-Kafka Messages</br>
 
 ## Start the Docker-Compose
+Line:
+```bash
+KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092,PLAINTEXT_HOST://localhost:9092
+```
+was changed to:
+```bash
+KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092,PLAINTEXT_HOST://broker:9092
+```
 ### create topic
 ```bash
 docker-compose exec broker kafka-topics --create --topic vks --bootstrap-server broker:9092 --replication-factor 1 --partitions 1
@@ -33,7 +41,7 @@ Dont forget to change the network address for the Broker and the schema registry
 'bootstrap.servers': "172.XX.0.3:9092",
 'schema.registry.url': "http://172.XX.0.4:8081",
 ```
-With: Docker inspect container-name
+Use this command to find the ip: Docker inspect container-name
 
 ## Create and Run Python Container:
 ```bash
