@@ -6,7 +6,7 @@ Michel: Python Confluent-Kafka message delivery from Flask website to Kafka</br>
 Johannes: Replication for Confluent-Kafka Messages</br>
 
 ## Start the Docker-Compose
-Line:
+Line in Docker-Compose.yml:
 ```bash
 KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092,PLAINTEXT_HOST://localhost:9092
 ```
