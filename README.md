@@ -1,5 +1,10 @@
 # kafka-demonstrator
 
+## Division of tasks
+Tobias: Python Flask website to generate example events
+Michel: Python Confluent-Kafka message delivery from Flask website to Kafka
+Johannes: Replication for Confluent-Kafka Messages
+
 ## Start the Docker-Compose
 ### create topic
 ```bash
