@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstrator</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="/"><h1>Demonstrator</h1></a>
+
+    <h2>Hello {{ user }} </h2>
+
+    <form>
+        <label for="message">New message:</label>
+        <input name="message" required>
+        <a href=# id=send><button>Send</button></a>
+    </form>
+
+    <form>
+        <label for="last_message">Last message:</label>
+        <output name="last_message">"<span id=last_message>No messages sent before</span>"</output>
+    </form>
+
+    <form>
+        <label for="num_messages">Number of messages:</label>
+        <output name="num_messages"><span id=num_messages>0</span></output>
+    </form>
+
+    <script type=text/javascript>
+        var num_messages = 0
+        $(function() {
+            $('a#send').on('click', function(event) {
+                event.preventDefault()
+                $.getJSON('/message', {
+                    message: $('input[name="message"]').val()
+                }, function(data) {
+                    $("#last_message").text(data.last_message);
+                    $("#num_messages").text(num_messages);
+                });
+                num_messages++;
+                return false; 
+            });
+        });
+    </script>
+
+</body>
+
+</html>
