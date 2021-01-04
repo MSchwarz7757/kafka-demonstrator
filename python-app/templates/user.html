@@ -46,11 +46,11 @@
                 return false;
             });
 
-          $(document).on('mousemove', function (e) {
-            $.ajax({url: '/mouse-events', type:'POST', dataType: 'json',
-                contentType: 'application/json', data: JSON.stringify({"x": e.clientX, "y": e.clientY})
-            }).done(function( msg ) {console.log( "Data Saved: " + msg );});
-          });
+            $(document).on('mousemove', function (e) {
+                $.ajax({url: '/mouse-events', type:'POST', dataType: 'json',
+                    contentType: 'application/json', data: JSON.stringify({"x": e.clientX, "y": e.clientY})
+                }).done(function( msg ) {console.log( "Data Saved: " + msg );});
+            });
         });
     </script>
 
