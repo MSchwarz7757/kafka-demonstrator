@@ -24,6 +24,11 @@ def login():
 
     return render_template('user.html', user=user)
 
+@app.route('/mouse-events')
+def mouse_events():
+    return render_template('mouse-events.html')
+
+
 @app.route('/message')
 def send():
     """Multiple message sending event"""
