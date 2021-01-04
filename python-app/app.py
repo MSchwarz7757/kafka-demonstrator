@@ -26,8 +26,12 @@ def login():
 
 @app.route('/mouse-events')
 def mouse_events():
-    return render_template('mouse-events.html')
+    return render_template('user.html')
 
+@app.route('/mouse-events', methods=['POST'])
+def mouse():
+  print(request.json)
+  return jsonify(request.json)
 
 @app.route('/message')
 def send():
