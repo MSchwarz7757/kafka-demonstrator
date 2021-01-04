@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "namespace": "VKSDemo",
+  "name": "OrderDetail",
+  "fields": [
+    {
+      "name": "ID",
+      "type": "long",
+      "doc": "The user ID"
+    },
+    {
+      "name": "message",
+      "type": "string",
+      "doc": "The users name"
+    }
+  ]
+}
+

@@ -11,13 +11,9 @@
     {
       "name": "username",
       "type": "string",
-      "doc": "The users name"
-    },
-    {
-      "name": "message",
-      "type": "string",
-      "doc": "The message which is sent"
+      "doc": "login status"
     }
   ]
 }
-{"ID":2343438,"username":"Michel","message":"Das ist ein Test"}
+
+{"ID":2343434,"username":"Peter"}
