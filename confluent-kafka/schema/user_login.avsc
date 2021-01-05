@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "namespace": "VKSDemo",
-  "name": "OrderDetail",
+  "namespace": "vks",
+  "name": "vksDemo",
   "fields": [
     {
       "name": "ID",
@@ -11,9 +11,7 @@
     {
       "name": "username",
       "type": "string",
-      "doc": "login status"
+      "doc": "The user name"
     }
   ]
 }
-
-{"ID":2343434,"username":"Peter"}

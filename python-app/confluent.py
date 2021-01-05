@@ -1,46 +1,7 @@
-from confluent_kafka import avro
 from confluent_kafka.avro import AvroProducer
 import socket
 
-value_schema_str = """
-{
-  "type": "record",
-  "namespace": "VKSDemo",
-  "name": "OrderDetail",
-  "fields": [
-    {
-      "name": "ID",
-      "type": "long",
-      "doc": "The user ID"
-    },
-    {
-      "name": "username",
-      "type": "string",
-      "doc": "The users name"
-    }
-  ]
-}
-"""
 
-key_schema_str = """
-{
-  "type": "record",
-  "namespace": "VKSDemo",
-  "name": "OrderDetail",
-  "fields": [
-    {
-      "name": "ID",
-      "type": "long",
-      "doc": "The user ID"
-    },
-    {
-      "name": "username",
-      "type": "string",
-      "doc": "The users name"
-    }
-  ]
-}
-"""
 
 def delivery_report(err, msg):
     """ Called once for each message produced to indicate delivery result.
@@ -50,16 +11,15 @@ def delivery_report(err, msg):
     else:
         print('Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
 
-class Demonstator:
-    value_schema = avro.loads(value_schema_str)
-    key_schema = avro.loads(key_schema_str)
+class KafkaProducer:
 
-
-    def __init__(self, b_loc, b_port, r_loc, r_port):
+    def __init__(self, b_loc, b_port, r_loc, r_port,key_schema,value_schema):
         self.b_loc = b_loc
         self.b_port = b_port
         self.b_loc = r_loc
         self.b_loc = r_port
+        self.value_schema = value_schema
+        self.key_schema = key_schema
 
         self.avroProducer = AvroProducer({
             'bootstrap.servers': b_loc+":"+b_port,

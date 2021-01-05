@@ -1,10 +1,140 @@
 from flask import Flask, request, render_template, jsonify
-from confluent import Demonstator
+from confluent import KafkaProducer
+from confluent_kafka import avro
 
 app = Flask(__name__)
 
+login_value = """
+{
+  "type": "record",
+  "namespace": "vks",
+  "name": "vksDemo",
+  "fields": [
+    {
+      "name": "ID",
+      "type": "long",
+      "doc": "The user ID"
+    },
+    {
+      "name": "username",
+      "type": "string",
+      "doc": "The user name"
+    }
+  ]
+}
+"""
+login_key = """
+{
+  "type": "record",
+  "namespace": "vks",
+  "name": "vksDemo",
+  "fields": [
+    {
+      "name": "ID",
+      "type": "long",
+      "doc": "The user ID"
+    },
+    {
+      "name": "username",
+      "type": "string",
+      "doc": "The user name"
+    }
+  ]
+}
+"""
+login_value_avro = avro.loads(login_value)
+login_key_avro = avro.loads(login_key)
+
+message_value = """
+{
+  "type": "record",
+  "namespace": "vks",
+  "name": "vksDemo",
+  "fields": [
+    {
+      "name": "ID",
+      "type": "long",
+      "doc": "The user ID"
+    },
+    {
+      "name": "message",
+      "type": "string",
+      "doc": "The users message"
+    }
+  ]
+}
+"""
+message_key = """
+{
+  "type": "record",
+  "namespace": "vks",
+  "name": "vksDemo",
+  "fields": [
+    {
+      "name": "ID",
+      "type": "long",
+      "doc": "The user ID"
+    },
+    {
+      "name": "message",
+      "type": "string",
+      "doc": "The users message"
+    }
+  ]
+}
+"""
+message_value_avro = avro.loads(message_value)
+message_key_avro = avro.loads(message_key)
+
+mouse_value = """
+{
+  "type": "record",
+  "namespace": "vks",
+  "name": "vksDemo",
+  "fields": [
+    {
+      "name": "x",
+      "type": "int",
+      "doc": "x movement"
+    },
+    {
+      "name": "y",
+      "type": "int",
+      "doc": "y mouvement"
+    }
+  ]
+}
+"""
+mouse_key = """
+{
+  "type": "record",
+  "namespace": "vks",
+  "name": "vksDemo",
+  "fields": [
+    {
+      "name": "x",
+      "type": "int",
+      "doc": "x movement"
+    },
+    {
+      "name": "y",
+      "type": "int",
+      "doc": "y mouvement"
+    }
+  ]
+}
+"""
+mouse_value_avro = avro.loads(mouse_value)
+mouse_key_avro = avro.loads(mouse_key)
+
 # create a confluent-kafka instance
-my_messages = Demonstator("172.19.0.3","9092","172.19.0.4","8081")
+ip_b = "172.21.0.4"
+ip_s = "172.21.0.5"
+port_b = "9092"
+port_s = "8081"
+login_kafka = KafkaProducer(ip_b, port_b, ip_s, port_s, login_key_avro, login_value_avro)
+message_kafka = KafkaProducer(ip_b, port_b, ip_s, port_s, message_key_avro, message_value_avro)
+mouse_kafka = KafkaProducer(ip_b, port_b, ip_s, port_s, mouse_key_avro, mouse_value_avro)
 
 @app.route('/')
 def index():
@@ -20,8 +150,7 @@ def login():
 
     user = request.form['name']
 
-    my_messages.produceMessage("user",{"ID":123,"username":user},{"ID":123,"username":user})
-
+    login_kafka.produceMessage("login", {"ID": 123456, "username": user}, {"ID": 123456, "username": user})
     return render_template('user.html', user=user)
 
 @app.route('/mouse-events')
@@ -30,8 +159,10 @@ def mouse_events():
 
 @app.route('/mouse-events', methods=['POST'])
 def mouse():
-  print(request.json)
-  return jsonify(request.json)
+    print(request.json)
+
+    mouse_kafka.produceMessage("mouse", request.json, request.json)
+    return jsonify(request.json)
 
 @app.route('/message')
 def send():
@@ -39,7 +170,7 @@ def send():
 
     message = request.args.get('message', 'None', type=str)
 
-    my_messages.produceMessage("user",{"ID":123,"username":message},{"ID":123,"username":message})
+    message_kafka.produceMessage("message",{"ID":123456,"message":message},{"ID":123456,"message":message})
 
     return jsonify(last_message=message)
 

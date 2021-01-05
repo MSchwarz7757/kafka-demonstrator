@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "namespace": "vks",
+  "name": "vksDemo",
+  "fields": [
+    {
+      "name": "x",
+      "type": "int",
+      "doc": "x movement"
+    },
+    {
+      "name": "y",
+      "type": "int",
+      "doc": "y mouvement"
+    }
+  ]
+}
