@@ -5,6 +5,12 @@ Tobias: Python Flask website to generate example events</br>
 Michel: Python Confluent-Kafka message delivery from Flask website to Kafka</br>
 Johannes: Replication for Confluent-Kafka Messages</br>
 
+## Docker Python-Kafka Container aufbauen und starten
+```
+docker build -t python-kafka:1.0 .
+docker run -it -p 5000:5000 --net confluent-kafka_default --name python-kafka python-kafka:1.0
+```
+
 ## Start the Docker-Compose
 Line in Docker-Compose.yml:
 ```bash
