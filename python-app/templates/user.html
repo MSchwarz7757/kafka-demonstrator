@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <a href="/"><h1>Demonstrator</h1></a>
+    <a href="/">
+        <h1>Demonstrator</h1>
+    </a>
 
     <h2>Hello {{ user }} </h2>
 
@@ -31,7 +33,7 @@
 
     <script type=text/javascript>
         var num_messages = 0
-        $(function() {
+        $(document).on('ready', function() {
             $('button#send').on('click', function(event) {
                 event.preventDefault()
                 $.getJSON('/message', {
@@ -41,7 +43,13 @@
                     $("#num_messages").text(num_messages);
                 });
                 num_messages++;
-                return false; 
+                return false;
+            });
+
+            $(document).on('mousemove', function (e) {
+                $.ajax({url: '/mouse-events', type:'POST', dataType: 'json',
+                    contentType: 'application/json', data: JSON.stringify({"x": e.clientX, "y": e.clientY})
+                }).done(function( msg ) {console.log( "Data Saved: " + msg );});
             });
         });
     </script>
