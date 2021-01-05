@@ -1,8 +1,16 @@
 from flask import Flask, request, render_template, jsonify
 from confluent import KafkaProducer
 from confluent_kafka import avro
+from topics import create_topic
 
 app = Flask(__name__)
+topic1 = str(input("First Topic name (to generate usernames e.g. login): "))
+topic2 = str(input("Second Topic name (to generate messages e.g message): "))
+topic3 = str(input("Third Topic name (to generate mouse-detection e.g mouse): "))
+partitions = int(input("Partitions: "))
+replication = int(input("Replication: "))
+
+create_topic(topic1, topic2, topic3, partitions, replication)
 
 login_value = """
 {
@@ -128,8 +136,8 @@ mouse_value_avro = avro.loads(mouse_value)
 mouse_key_avro = avro.loads(mouse_key)
 
 # create a confluent-kafka instance
-ip_b = "172.21.0.4"
-ip_s = "172.21.0.5"
+ip_b = "172.22.0.4"
+ip_s = "172.22.0.5"
 port_b = "9092"
 port_s = "8081"
 login_kafka = KafkaProducer(ip_b, port_b, ip_s, port_s, login_key_avro, login_value_avro)
@@ -150,7 +158,7 @@ def login():
 
     user = request.form['name']
 
-    login_kafka.produceMessage("login", {"ID": 123456, "username": user}, {"ID": 123456, "username": user})
+    login_kafka.produceMessage(topic1, {"ID": 123456, "username": user}, {"ID": 123456, "username": user})
     return render_template('user.html', user=user)
 
 @app.route('/mouse-events')
@@ -161,7 +169,7 @@ def mouse_events():
 def mouse():
     print(request.json)
 
-    mouse_kafka.produceMessage("mouse", request.json, request.json)
+    mouse_kafka.produceMessage(topic3, request.json, request.json)
     return jsonify(request.json)
 
 @app.route('/message')
@@ -170,7 +178,7 @@ def send():
 
     message = request.args.get('message', 'None', type=str)
 
-    message_kafka.produceMessage("message",{"ID":123456,"message":message},{"ID":123456,"message":message})
+    message_kafka.produceMessage(topic2,{"ID":123456,"message":message},{"ID":123456,"message":message})
 
     return jsonify(last_message=message)
 
