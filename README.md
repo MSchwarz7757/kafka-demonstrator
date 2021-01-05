@@ -22,18 +22,18 @@ KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092,PLAINTEXT_HOST://broker:909
 ```
 ### create topic
 ```bash
-docker-compose exec broker kafka-topics --create --topic vks --bootstrap-server broker:9092 --replication-factor 1 --partitions 1
+docker exec kafka2 kafka-topics --create --topic vks --bootstrap-server kafka2:29092 --replication-factor 2 --partitions 2
 ```
 ### create consumer 
 ```bash
-docker-compose exec schema-registry bash
-kafka-avro-console-consumer --topic vks --bootstrap-server broker:9092 
+docker exec -it schema-registry bash
+kafka-avro-console-consumer --topic vks --bootstrap-server kafka2:29092
 ```
 
 ### create producer
 ```bash
-docker-compose exec schema-registry bash
-kafka-avro-console-producer --topic vks --bootstrap-server broker:9092 --property value.schema="$(< /opt/app/schema/order_detail.avsc)"
+docker exec -it schema-registry bash
+$kafka-avro-console-producer --topic vks --bootstrap-server kafka2:29092 --property value.schema="$(< /opt/app/schema/user_login.avsc)"
 ```
 
 ### control-center visible here: 
