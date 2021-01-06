@@ -1,10 +1,10 @@
 from flask import Flask, request, render_template, jsonify
-from confluent import Demonstator
+# from confluent import Demonstator
 
 app = Flask(__name__)
 
 # create a confluent-kafka instance
-my_messages = Demonstator("172.19.0.3","9092","172.19.0.4","8081")
+# my_messages = Demonstator("172.19.0.3","9092","172.19.0.4","8081")
 
 @app.route('/')
 def index():
@@ -20,7 +20,7 @@ def login():
 
     user = request.form['name']
 
-    my_messages.produceMessage("user",{"ID":123,"username":user},{"ID":123,"username":user})
+    # my_messages.produceMessage("user",{"ID":123,"username":user},{"ID":123,"username":user})
 
     return render_template('user.html', user=user)
 
@@ -39,7 +39,7 @@ def send():
 
     message = request.args.get('message', 'None', type=str)
 
-    my_messages.produceMessage("user",{"ID":123,"username":message},{"ID":123,"username":message})
+    # my_messages.produceMessage("user",{"ID":123,"username":message},{"ID":123,"username":message})
 
     return jsonify(last_message=message)
 
