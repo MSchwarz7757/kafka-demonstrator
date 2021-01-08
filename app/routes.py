@@ -1,8 +1,5 @@
-from flask import Flask, request, render_template, jsonify
-# from confluent import Demonstator
-
-app = Flask(__name__)
-
+from flask import request, render_template, jsonify
+from app import app
 # create a confluent-kafka instance
 # my_messages = Demonstator("172.19.0.3","9092","172.19.0.4","8081")
 
@@ -42,6 +39,3 @@ def send():
     # my_messages.produceMessage("user",{"ID":123,"username":message},{"ID":123,"username":message})
 
     return jsonify(last_message=message)
-
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000,)
