@@ -1,15 +1,19 @@
 from flask import request, render_template, jsonify
 from app import app
+import os
+from app.demonstrator import Demonstrator
+
 # create a confluent-kafka instance
-# my_messages = Demonstator("172.19.0.3","9092","172.19.0.4","8081")
+app.config['BROKER_URL'] = os.environ.get("BROKER_URL")
+app.config['SCHEMA_REGISTRY_URL'] = os.environ.get("SCHEMA_REGISTRY_URL")
+my_messages = Demonstrator(app.config["BROKER_URL"], app.config["SCHEMA_REGISTRY_URL"])
 
 @app.route('/')
 def index():
     """Startup event"""
-
     # Kafka goes here
 
-    return render_template('index.html')
+    return render_template('index.html', broker_url=app.config['BROKER_URL'], schema_url=app.config['SCHEMA_REGISTRY_URL'])
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -27,7 +31,6 @@ def mouse_events():
 
 @app.route('/mouse-events', methods=['POST'])
 def mouse():
-  print(request.json)
   return jsonify(request.json)
 
 @app.route('/message')

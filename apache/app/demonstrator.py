@@ -50,21 +50,19 @@ def delivery_report(err, msg):
     else:
         print('Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
 
-class Demonstator:
+class Demonstrator:
     value_schema = avro.loads(value_schema_str)
     key_schema = avro.loads(key_schema_str)
 
 
-    def __init__(self, b_loc, b_port, r_loc, r_port):
-        self.b_loc = b_loc
-        self.b_port = b_port
-        self.b_loc = r_loc
-        self.b_loc = r_port
+    def __init__(self, broker_url, registry_url):
+        self.broker_url = broker_url
+        self.registry_url = registry_url
 
         self.avroProducer = AvroProducer({
-            'bootstrap.servers': b_loc+":"+b_port,
+            'bootstrap.servers': broker_url,
             'on_delivery': delivery_report,
-            'schema.registry.url': "http://"+r_loc+":"+r_port,
+            'schema.registry.url': registry_url,
         }, default_key_schema=self.key_schema, default_value_schema=self.value_schema)
 
         #value = {"ID": 2343438, "username": "Michel"}
@@ -82,5 +80,9 @@ class Demonstator:
         a_socket.close()
 
     def produceMessage(self,topic,value,key):
+        print(self)
+        print(topic)
+        print(value)
+        print(key)
         self.avroProducer.produce(topic=topic, value=value, key=key)
         self.avroProducer.flush()
