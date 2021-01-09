@@ -35,13 +35,12 @@ services:
       KAFKA_JMX_PORT: 9101
       KAFKA_JMX_HOSTNAME: localhost
       KAFKA_CONFLUENT_SCHEMA_REGISTRY_URL: http://schema-registry:8081
-      CONFLUENT_HTTP_SERVER_LISTENERS: http://localhost:8090
       CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: kafka1:9092
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 2
       CONFLUENT_METRICS_ENABLE: 'true'
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
       CONFLUENT_BALANCER_ENABLE: 'true'
-      KAFKA_LOGS_DIR: 'tmp/kafka-logs-0'
+      KAFKA_LOGS_DIR: 'tmp/kafka-logs-1'
 
   kafka2:
     image: confluentinc/cp-server:6.0.1
@@ -49,6 +48,7 @@ services:
     container_name: kafka2
     depends_on:
       - zookeeper
+      - kafka1
     ports:
       - "29092:29092"
       - "9102:9102"
@@ -82,6 +82,8 @@ services:
     container_name: kafka3
     depends_on:
       - zookeeper
+      - kafka1
+      - kafka2
     ports:
       - "39092:39092"
       - "9103:9103"
@@ -101,13 +103,86 @@ services:
       KAFKA_JMX_PORT: 9103
       KAFKA_JMX_HOSTNAME: localhost
       KAFKA_CONFLUENT_SCHEMA_REGISTRY_URL: http://schema-registry:8081
-      CONFLUENT_HTTP_SERVER_LISTENERS: http://localhost:8091
+      CONFLUENT_HTTP_SERVER_LISTENERS: http://localhost:8092
       CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: kafka3:9092
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 2
       CONFLUENT_METRICS_ENABLE: 'true'
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
       CONFLUENT_BALANCER_ENABLE: 'true'
       KAFKA_LOGS_DIR: 'tmp/kafka-logs-3'
+
+  # kafka4:
+  #   image: confluentinc/cp-server:6.0.1
+  #   hostname: kafka4
+  #   container_name: kafka4
+  #   depends_on:
+  #     - zookeeper
+  #     - kafka1
+  #     - kafka2
+  #     - kafka3
+  #   ports:
+  #     - "49092:49092"
+  #     - "9104:9104"
+  #   environment:
+  #     KAFKA_BROKER_ID: 3
+  #     KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+  #     KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+  #     # changed localhost to broker in PLAINTEXT_HOST
+  #     KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka4:49092,PLAINTEXT_HOST://kafka4:9092
+  #     KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
+  #     KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 2
+  #     KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+  #     KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 2
+  #     KAFKA_CONFLUENT_BALANCER_TOPIC_REPLICATION_FACTOR: 2
+  #     KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+  #     KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 2
+  #     KAFKA_JMX_PORT: 9104
+  #     KAFKA_JMX_HOSTNAME: localhost
+  #     KAFKA_CONFLUENT_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+  #     CONFLUENT_HTTP_SERVER_LISTENERS: http://localhost:8093
+  #     CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: kafka4:9092
+  #     CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 2
+  #     CONFLUENT_METRICS_ENABLE: 'true'
+  #     CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
+  #     CONFLUENT_BALANCER_ENABLE: 'true'
+  #     KAFKA_LOGS_DIR: 'tmp/kafka-logs-4'
+
+  # kafka5:
+  #   image: confluentinc/cp-server:6.0.1
+  #   hostname: kafka5
+  #   container_name: kafka5
+  #   depends_on:
+  #     - zookeeper
+  #     - kafka1
+  #     - kafka2
+  #     - kafka3
+  #     - kafka4
+  #   ports:
+  #     - "59092:59092"
+  #     - "9105:9105"
+  #   environment:
+  #     KAFKA_BROKER_ID: 4
+  #     KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+  #     KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+  #     # changed localhost to broker in PLAINTEXT_HOST
+  #     KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka5:59092,PLAINTEXT_HOST://kafka5:9092
+  #     KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
+  #     KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 2
+  #     KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+  #     KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 2
+  #     KAFKA_CONFLUENT_BALANCER_TOPIC_REPLICATION_FACTOR: 2
+  #     KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+  #     KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 2
+  #     KAFKA_JMX_PORT: 9105
+  #     KAFKA_JMX_HOSTNAME: localhost
+  #     KAFKA_CONFLUENT_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+  #     CONFLUENT_HTTP_SERVER_LISTENERS: http://localhost:8094
+  #     CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: kafka5:9092
+  #     CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 2
+  #     CONFLUENT_METRICS_ENABLE: 'true'
+  #     CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
+  #     CONFLUENT_BALANCER_ENABLE: 'true'
+  #     KAFKA_LOGS_DIR: 'tmp/kafka-logs-5'
 
   schema-registry:
     image: confluentinc/cp-schema-registry:6.0.1
@@ -117,9 +192,8 @@ services:
       - kafka1
       - kafka2
       - kafka3
-      # - broker-2
-      # - broker-3
-      # - broker-4
+      # - kafka4
+      # - kafka5
     ports:
       - "8081:8081"
     environment:
@@ -137,6 +211,8 @@ services:
       - kafka1
       - kafka2
       - kafka3
+      # - kafka4
+      # - kafka5
       - zookeeper
       - schema-registry
     ports:
@@ -173,8 +249,8 @@ services:
       - kafka1
       - kafka2
       - kafka3
-      # - broker-3
-      # - broker-4
+      # - kafka4
+      # - kafka5
       - schema-registry
       - connect
       - ksqldb-server
@@ -200,9 +276,8 @@ services:
       - kafka1
       - kafka2
       - kafka3
-      # - broker-2
-      # - broker-3
-      # - broker-4
+      # - kafka4
+      # - kafka5
       - connect
     ports:
       - "8088:8088"
@@ -228,6 +303,8 @@ services:
       - kafka1
       - kafka2
       - kafka3
+      # - kafka4
+      # - kafka5
       - schema-registry
       - connect
       - ksqldb-server
