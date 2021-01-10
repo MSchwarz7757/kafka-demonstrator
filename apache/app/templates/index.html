@@ -14,8 +14,9 @@
     <h2>BROKER: {{ broker_url }} </h2>
     <h2>SCHEMA-REGISTRY: {{ schema_url }} </h2>
     <form action="/login" method="POST">
-        <label for="name">Name:</label>
-        <input name="name" required>
+        <label style="display: inline-block;width: 100px;" for="name">Name:</label>
+        <input name="name" required><br>
+        <br>
         <input type="submit" value="Login">
     </form>
 </body>
