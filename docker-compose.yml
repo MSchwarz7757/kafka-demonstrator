@@ -117,7 +117,7 @@ services:
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: kafka1:9092,kafka2:9092,kafka3:9092
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
     volumes:
-      - ./schema:/opt/app/schema/
+      - ./apache/app/schema:/opt/app/schema/
 
   web:
     build: ./apache

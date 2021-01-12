@@ -12,9 +12,9 @@ RUN apt-get update && apt-get install -y apache2 \
     python3 \
     python3-pip \
     vim \
- && apt-get clean \
- && apt-get autoremove \
- && rm -rf /var/lib/apt/lists/*
+    && apt-get clean \
+    && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy over and install the requirements
 COPY ./requirements.txt /var/www/apache-flask/requirements.txt

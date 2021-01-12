@@ -2,7 +2,7 @@ Attaching to kafka1
 [36mkafka1             |[0m ===> User
 [36mkafka1             |[0m uid=1000(appuser) gid=1000(appuser) groups=1000(appuser)
 [36mkafka1             |[0m ===> Configuring ...
-[36mkafka1             |[0m ===> Running preflight checks ... 
+[36mkafka1             |[0m ===> Running preflight checks ...
 [36mkafka1             |[0m ===> Check if /var/lib/kafka/data is writable ...
 [36mkafka1             |[0m ===> Check if Zookeeper is healthy ...
 [36mkafka1             |[0m [main] INFO org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.5.8-f439ca583e70862c3068a1f2a7d4d068eec33315, built on 05/04/2020 15:53 GMT
@@ -37,8 +37,8 @@ Attaching to kafka1
 [36mkafka1             |[0m [main-SendThread(zookeeper:2181)] INFO org.apache.zookeeper.ClientCnxn - Session establishment complete on server zookeeper/192.168.176.2:2181, sessionid = 0x10011273bc80002, negotiated timeout = 40000
 [36mkafka1             |[0m [main] INFO org.apache.zookeeper.ZooKeeper - Session: 0x10011273bc80002 closed
 [36mkafka1             |[0m [main-EventThread] INFO org.apache.zookeeper.ClientCnxn - EventThread shut down for session: 0x10011273bc80002
-[36mkafka1             |[0m ===> Launching ... 
-[36mkafka1             |[0m ===> Launching kafka ... 
+[36mkafka1             |[0m ===> Launching ...
+[36mkafka1             |[0m ===> Launching kafka ...
 [36mkafka1             |[0m [2021-01-09 19:50:11,684] INFO Registered kafka:type=kafka.Log4jController MBean (kafka.utils.Log4jControllerRegistration$)
 [36mkafka1             |[0m [2021-01-09 19:50:14,159] INFO Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation (org.apache.zookeeper.common.X509Util)
 [36mkafka1             |[0m [2021-01-09 19:50:14,473] INFO Registered signal handlers for TERM, INT, HUP (org.apache.kafka.common.utils.LoggingSignalHandler)
@@ -74,14 +74,14 @@ Attaching to kafka1
 [36mkafka1             |[0m [2021-01-09 19:50:15,045] INFO [ZooKeeperClient Kafka server] Connected. (kafka.zookeeper.ZooKeeperClient)
 [36mkafka1             |[0m [2021-01-09 19:50:16,035] INFO Cluster ID = VVoXKnO1RKKKeAWg2zUUqg (kafka.server.KafkaServer)
 [36mkafka1             |[0m [2021-01-09 19:50:16,046] WARN No meta.properties file under dir /var/lib/kafka/data/meta.properties (kafka.server.BrokerMetadataCheckpoint)
-[36mkafka1             |[0m [2021-01-09 19:50:16,479] INFO KafkaConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:16,479] INFO KafkaConfig values:
 [36mkafka1             |[0m 	advertised.host.name = null
 [36mkafka1             |[0m 	advertised.listeners = PLAINTEXT://kafka1:19092,PLAINTEXT_HOST://kafka1:9092
 [36mkafka1             |[0m 	advertised.port = null
 [36mkafka1             |[0m 	alter.config.policy.class.name = null
 [36mkafka1             |[0m 	alter.log.dirs.replication.quota.window.num = 11
 [36mkafka1             |[0m 	alter.log.dirs.replication.quota.window.size.seconds = 1
-[36mkafka1             |[0m 	authorizer.class.name = 
+[36mkafka1             |[0m 	authorizer.class.name =
 [36mkafka1             |[0m 	auto.create.topics.enable = true
 [36mkafka1             |[0m 	auto.leader.rebalance.enable = true
 [36mkafka1             |[0m 	background.threads = 10
@@ -94,7 +94,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	compression.type = producer
 [36mkafka1             |[0m 	confluent.append.record.interceptor.classes = []
 [36mkafka1             |[0m 	confluent.apply.create.topic.policy.to.create.partitions = false
-[36mkafka1             |[0m 	confluent.authorizer.authority.name = 
+[36mkafka1             |[0m 	confluent.authorizer.authority.name =
 [36mkafka1             |[0m 	confluent.backpressure.disk.enable = false
 [36mkafka1             |[0m 	confluent.backpressure.disk.free.threshold.bytes = 21474836480
 [36mkafka1             |[0m 	confluent.backpressure.disk.produce.bytes.per.second = 131072
@@ -128,12 +128,12 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.http.server.start.timeout.ms = 30000
 [36mkafka1             |[0m 	confluent.http.server.stop.timeout.ms = 30000
 [36mkafka1             |[0m 	confluent.internal.rest.server.bind.port = null
-[36mkafka1             |[0m 	confluent.log.placement.constraints = 
+[36mkafka1             |[0m 	confluent.log.placement.constraints =
 [36mkafka1             |[0m 	confluent.metadata.server.cluster.registry.clusters = []
 [36mkafka1             |[0m 	confluent.missing.id.cache.ttl.sec = 60
 [36mkafka1             |[0m 	confluent.missing.id.query.range = 200
 [36mkafka1             |[0m 	confluent.multitenant.listener.names = null
-[36mkafka1             |[0m 	confluent.offsets.topic.placement.constraints = 
+[36mkafka1             |[0m 	confluent.offsets.topic.placement.constraints =
 [36mkafka1             |[0m 	confluent.operator.managed = false
 [36mkafka1             |[0m 	confluent.prefer.tier.fetch.ms = -1
 [36mkafka1             |[0m 	confluent.quota.tenant.broker.max.consumer.rate = 13107200
@@ -148,7 +148,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.schema.registry.url = http://schema-registry:8081
 [36mkafka1             |[0m 	confluent.security.event.logger.authentication.enable = false
 [36mkafka1             |[0m 	confluent.security.event.logger.enable = true
-[36mkafka1             |[0m 	confluent.security.event.router.config = 
+[36mkafka1             |[0m 	confluent.security.event.router.config =
 [36mkafka1             |[0m 	confluent.segment.speculative.prefetch.enable = false
 [36mkafka1             |[0m 	confluent.ssl.key.password = null
 [36mkafka1             |[0m 	confluent.ssl.keystore.location = null
@@ -159,7 +159,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.ssl.truststore.password = null
 [36mkafka1             |[0m 	confluent.ssl.truststore.type = null
 [36mkafka1             |[0m 	confluent.tier.archiver.num.threads = 2
-[36mkafka1             |[0m 	confluent.tier.backend = 
+[36mkafka1             |[0m 	confluent.tier.backend =
 [36mkafka1             |[0m 	confluent.tier.enable = false
 [36mkafka1             |[0m 	confluent.tier.feature = false
 [36mkafka1             |[0m 	confluent.tier.fenced.segment.delete.delay.ms = 600000
@@ -170,7 +170,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.tier.fetcher.offset.cache.size = 200000
 [36mkafka1             |[0m 	confluent.tier.gcs.bucket = null
 [36mkafka1             |[0m 	confluent.tier.gcs.cred.file.path = null
-[36mkafka1             |[0m 	confluent.tier.gcs.prefix = 
+[36mkafka1             |[0m 	confluent.tier.gcs.prefix =
 [36mkafka1             |[0m 	confluent.tier.gcs.region = null
 [36mkafka1             |[0m 	confluent.tier.gcs.write.chunk.size = 0
 [36mkafka1             |[0m 	confluent.tier.local.hotset.bytes = -1
@@ -190,13 +190,13 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.tier.s3.aws.signer.override = null
 [36mkafka1             |[0m 	confluent.tier.s3.bucket = null
 [36mkafka1             |[0m 	confluent.tier.s3.cred.file.path = null
-[36mkafka1             |[0m 	confluent.tier.s3.prefix = 
+[36mkafka1             |[0m 	confluent.tier.s3.prefix =
 [36mkafka1             |[0m 	confluent.tier.s3.region = null
 [36mkafka1             |[0m 	confluent.tier.s3.sse.algorithm = AES256
 [36mkafka1             |[0m 	confluent.tier.s3.sse.customer.encryption.key = null
 [36mkafka1             |[0m 	confluent.tier.segment.hotset.roll.min.bytes = 104857600
 [36mkafka1             |[0m 	confluent.tier.topic.delete.check.interval.ms = 10800000
-[36mkafka1             |[0m 	confluent.transaction.state.log.placement.constraints = 
+[36mkafka1             |[0m 	confluent.transaction.state.log.placement.constraints =
 [36mkafka1             |[0m 	confluent.verify.group.subscription.prefix = false
 [36mkafka1             |[0m 	connection.failed.authentication.delay.ms = 100
 [36mkafka1             |[0m 	connections.max.idle.ms = 600000
@@ -223,7 +223,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	group.max.session.timeout.ms = 1800000
 [36mkafka1             |[0m 	group.max.size = 2147483647
 [36mkafka1             |[0m 	group.min.session.timeout.ms = 6000
-[36mkafka1             |[0m 	host.name = 
+[36mkafka1             |[0m 	host.name =
 [36mkafka1             |[0m 	inter.broker.listener.name = null
 [36mkafka1             |[0m 	inter.broker.protocol.version = 2.6-IV0
 [36mkafka1             |[0m 	kafka.metrics.polling.interval.secs = 10
@@ -274,7 +274,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	log.segment.delete.delay.ms = 60000
 [36mkafka1             |[0m 	max.connections = 2147483647
 [36mkafka1             |[0m 	max.connections.per.ip = 2147483647
-[36mkafka1             |[0m 	max.connections.per.ip.overrides = 
+[36mkafka1             |[0m 	max.connections.per.ip.overrides =
 [36mkafka1             |[0m 	max.incremental.fetch.session.cache.slots = 1000
 [36mkafka1             |[0m 	message.max.bytes = 1048588
 [36mkafka1             |[0m 	metric.reporters = [io.confluent.metrics.reporter.ConfluentMetricsReporter]
@@ -404,14 +404,14 @@ Attaching to kafka1
 [36mkafka1             |[0m 	zookeeper.ssl.truststore.type = null
 [36mkafka1             |[0m 	zookeeper.sync.time.ms = 2000
 [36mkafka1             |[0m  (kafka.server.KafkaConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:16,516] INFO KafkaConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:16,516] INFO KafkaConfig values:
 [36mkafka1             |[0m 	advertised.host.name = null
 [36mkafka1             |[0m 	advertised.listeners = PLAINTEXT://kafka1:19092,PLAINTEXT_HOST://kafka1:9092
 [36mkafka1             |[0m 	advertised.port = null
 [36mkafka1             |[0m 	alter.config.policy.class.name = null
 [36mkafka1             |[0m 	alter.log.dirs.replication.quota.window.num = 11
 [36mkafka1             |[0m 	alter.log.dirs.replication.quota.window.size.seconds = 1
-[36mkafka1             |[0m 	authorizer.class.name = 
+[36mkafka1             |[0m 	authorizer.class.name =
 [36mkafka1             |[0m 	auto.create.topics.enable = true
 [36mkafka1             |[0m 	auto.leader.rebalance.enable = true
 [36mkafka1             |[0m 	background.threads = 10
@@ -424,7 +424,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	compression.type = producer
 [36mkafka1             |[0m 	confluent.append.record.interceptor.classes = []
 [36mkafka1             |[0m 	confluent.apply.create.topic.policy.to.create.partitions = false
-[36mkafka1             |[0m 	confluent.authorizer.authority.name = 
+[36mkafka1             |[0m 	confluent.authorizer.authority.name =
 [36mkafka1             |[0m 	confluent.backpressure.disk.enable = false
 [36mkafka1             |[0m 	confluent.backpressure.disk.free.threshold.bytes = 21474836480
 [36mkafka1             |[0m 	confluent.backpressure.disk.produce.bytes.per.second = 131072
@@ -458,12 +458,12 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.http.server.start.timeout.ms = 30000
 [36mkafka1             |[0m 	confluent.http.server.stop.timeout.ms = 30000
 [36mkafka1             |[0m 	confluent.internal.rest.server.bind.port = null
-[36mkafka1             |[0m 	confluent.log.placement.constraints = 
+[36mkafka1             |[0m 	confluent.log.placement.constraints =
 [36mkafka1             |[0m 	confluent.metadata.server.cluster.registry.clusters = []
 [36mkafka1             |[0m 	confluent.missing.id.cache.ttl.sec = 60
 [36mkafka1             |[0m 	confluent.missing.id.query.range = 200
 [36mkafka1             |[0m 	confluent.multitenant.listener.names = null
-[36mkafka1             |[0m 	confluent.offsets.topic.placement.constraints = 
+[36mkafka1             |[0m 	confluent.offsets.topic.placement.constraints =
 [36mkafka1             |[0m 	confluent.operator.managed = false
 [36mkafka1             |[0m 	confluent.prefer.tier.fetch.ms = -1
 [36mkafka1             |[0m 	confluent.quota.tenant.broker.max.consumer.rate = 13107200
@@ -478,7 +478,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.schema.registry.url = http://schema-registry:8081
 [36mkafka1             |[0m 	confluent.security.event.logger.authentication.enable = false
 [36mkafka1             |[0m 	confluent.security.event.logger.enable = true
-[36mkafka1             |[0m 	confluent.security.event.router.config = 
+[36mkafka1             |[0m 	confluent.security.event.router.config =
 [36mkafka1             |[0m 	confluent.segment.speculative.prefetch.enable = false
 [36mkafka1             |[0m 	confluent.ssl.key.password = null
 [36mkafka1             |[0m 	confluent.ssl.keystore.location = null
@@ -489,7 +489,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.ssl.truststore.password = null
 [36mkafka1             |[0m 	confluent.ssl.truststore.type = null
 [36mkafka1             |[0m 	confluent.tier.archiver.num.threads = 2
-[36mkafka1             |[0m 	confluent.tier.backend = 
+[36mkafka1             |[0m 	confluent.tier.backend =
 [36mkafka1             |[0m 	confluent.tier.enable = false
 [36mkafka1             |[0m 	confluent.tier.feature = false
 [36mkafka1             |[0m 	confluent.tier.fenced.segment.delete.delay.ms = 600000
@@ -500,7 +500,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.tier.fetcher.offset.cache.size = 200000
 [36mkafka1             |[0m 	confluent.tier.gcs.bucket = null
 [36mkafka1             |[0m 	confluent.tier.gcs.cred.file.path = null
-[36mkafka1             |[0m 	confluent.tier.gcs.prefix = 
+[36mkafka1             |[0m 	confluent.tier.gcs.prefix =
 [36mkafka1             |[0m 	confluent.tier.gcs.region = null
 [36mkafka1             |[0m 	confluent.tier.gcs.write.chunk.size = 0
 [36mkafka1             |[0m 	confluent.tier.local.hotset.bytes = -1
@@ -520,13 +520,13 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.tier.s3.aws.signer.override = null
 [36mkafka1             |[0m 	confluent.tier.s3.bucket = null
 [36mkafka1             |[0m 	confluent.tier.s3.cred.file.path = null
-[36mkafka1             |[0m 	confluent.tier.s3.prefix = 
+[36mkafka1             |[0m 	confluent.tier.s3.prefix =
 [36mkafka1             |[0m 	confluent.tier.s3.region = null
 [36mkafka1             |[0m 	confluent.tier.s3.sse.algorithm = AES256
 [36mkafka1             |[0m 	confluent.tier.s3.sse.customer.encryption.key = null
 [36mkafka1             |[0m 	confluent.tier.segment.hotset.roll.min.bytes = 104857600
 [36mkafka1             |[0m 	confluent.tier.topic.delete.check.interval.ms = 10800000
-[36mkafka1             |[0m 	confluent.transaction.state.log.placement.constraints = 
+[36mkafka1             |[0m 	confluent.transaction.state.log.placement.constraints =
 [36mkafka1             |[0m 	confluent.verify.group.subscription.prefix = false
 [36mkafka1             |[0m 	connection.failed.authentication.delay.ms = 100
 [36mkafka1             |[0m 	connections.max.idle.ms = 600000
@@ -553,7 +553,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	group.max.session.timeout.ms = 1800000
 [36mkafka1             |[0m 	group.max.size = 2147483647
 [36mkafka1             |[0m 	group.min.session.timeout.ms = 6000
-[36mkafka1             |[0m 	host.name = 
+[36mkafka1             |[0m 	host.name =
 [36mkafka1             |[0m 	inter.broker.listener.name = null
 [36mkafka1             |[0m 	inter.broker.protocol.version = 2.6-IV0
 [36mkafka1             |[0m 	kafka.metrics.polling.interval.secs = 10
@@ -604,7 +604,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	log.segment.delete.delay.ms = 60000
 [36mkafka1             |[0m 	max.connections = 2147483647
 [36mkafka1             |[0m 	max.connections.per.ip = 2147483647
-[36mkafka1             |[0m 	max.connections.per.ip.overrides = 
+[36mkafka1             |[0m 	max.connections.per.ip.overrides =
 [36mkafka1             |[0m 	max.incremental.fetch.session.cache.slots = 1000
 [36mkafka1             |[0m 	message.max.bytes = 1048588
 [36mkafka1             |[0m 	metric.reporters = [io.confluent.metrics.reporter.ConfluentMetricsReporter]
@@ -746,7 +746,7 @@ Attaching to kafka1
 [36mkafka1             |[0m [2021-01-09 19:50:17,658] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
 [36mkafka1             |[0m [2021-01-09 19:50:17,792] INFO Starting the log cleaner (kafka.log.LogCleaner)
 [36mkafka1             |[0m [2021-01-09 19:50:17,972] INFO [kafka-log-cleaner-thread-0]: Starting (kafka.log.LogCleaner)
-[36mkafka1             |[0m [2021-01-09 19:50:18,096] INFO AuditLogConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:18,096] INFO AuditLogConfig values:
 [36mkafka1             |[0m 	confluent.security.event.logger.authentication.enable = false
 [36mkafka1             |[0m 	confluent.security.event.logger.cloudevent.codec = structured
 [36mkafka1             |[0m 	confluent.security.event.logger.enable = true
@@ -758,9 +758,9 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.security.event.logger.exporter.kafka.topic.retention.ms = 2592000000
 [36mkafka1             |[0m 	confluent.security.event.logger.exporter.kafka.topic.roll.ms = 14400000
 [36mkafka1             |[0m 	confluent.security.event.router.cache.entries = 10000
-[36mkafka1             |[0m 	confluent.security.event.router.config = 
+[36mkafka1             |[0m 	confluent.security.event.router.config =
 [36mkafka1             |[0m  (io.confluent.security.audit.AuditLogConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:18,098] INFO AuditLogConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:18,098] INFO AuditLogConfig values:
 [36mkafka1             |[0m 	confluent.security.event.logger.authentication.enable = false
 [36mkafka1             |[0m 	confluent.security.event.logger.cloudevent.codec = structured
 [36mkafka1             |[0m 	confluent.security.event.logger.enable = true
@@ -772,15 +772,15 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.security.event.logger.exporter.kafka.topic.retention.ms = 2592000000
 [36mkafka1             |[0m 	confluent.security.event.logger.exporter.kafka.topic.roll.ms = 14400000
 [36mkafka1             |[0m 	confluent.security.event.router.cache.entries = 10000
-[36mkafka1             |[0m 	confluent.security.event.router.config = 
+[36mkafka1             |[0m 	confluent.security.event.router.config =
 [36mkafka1             |[0m  (io.confluent.security.audit.AuditLogConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:18,835] INFO CrnAuthorityConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:18,835] INFO CrnAuthorityConfig values:
 [36mkafka1             |[0m 	confluent.authorizer.authority.cache.entries = 10000
-[36mkafka1             |[0m 	confluent.authorizer.authority.name = 
+[36mkafka1             |[0m 	confluent.authorizer.authority.name =
 [36mkafka1             |[0m  (io.confluent.crn.CrnAuthorityConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:18,841] INFO CrnAuthorityConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:18,841] INFO CrnAuthorityConfig values:
 [36mkafka1             |[0m 	confluent.authorizer.authority.cache.entries = 10000
-[36mkafka1             |[0m 	confluent.authorizer.authority.name = 
+[36mkafka1             |[0m 	confluent.authorizer.authority.name =
 [36mkafka1             |[0m  (io.confluent.crn.CrnAuthorityConfig)
 [36mkafka1             |[0m [2021-01-09 19:50:20,550] INFO Awaiting socket connections on 0.0.0.0:19092. (kafka.network.Acceptor)
 [36mkafka1             |[0m [2021-01-09 19:50:20,851] INFO [SocketServer brokerId=0] Created data-plane acceptor and processors for endpoint : ListenerName(PLAINTEXT) (kafka.network.SocketServer)
@@ -809,7 +809,7 @@ Attaching to kafka1
 [36mkafka1             |[0m [2021-01-09 19:50:23,605] INFO [ProducerId Manager 0]: Acquired new producerId block (brokerId:0,blockStartProducerId:2000,blockEndProducerId:2999) by writing to Zk with path version 3 (kafka.coordinator.transaction.ProducerIdManager)
 [36mkafka1             |[0m [2021-01-09 19:50:23,689] INFO [TransactionCoordinator id=0] Starting up. (kafka.coordinator.transaction.TransactionCoordinator)
 [36mkafka1             |[0m [2021-01-09 19:50:23,693] INFO [TransactionCoordinator id=0] Startup complete. (kafka.coordinator.transaction.TransactionCoordinator)
-[36mkafka1             |[0m [2021-01-09 19:50:23,698] INFO MetadataServerConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:23,698] INFO MetadataServerConfig values:
 [36mkafka1             |[0m 	confluent.http.server.listeners = [http://0.0.0.0:8090]
 [36mkafka1             |[0m 	confluent.metadata.server.advertised.listeners = null
 [36mkafka1             |[0m 	confluent.metadata.server.listeners = null
@@ -817,7 +817,7 @@ Attaching to kafka1
 [36mkafka1             |[0m [2021-01-09 19:50:23,717] INFO [Transaction Marker Channel Manager 0]: Starting (kafka.coordinator.transaction.TransactionMarkerChannelManager)
 [36mkafka1             |[0m [2021-01-09 19:50:23,736] WARN Could not find suitable MetadataServer implementation. (org.apache.kafka.server.http.MetadataServerFactory)
 [36mkafka1             |[0m [2021-01-09 19:50:24,038] INFO [ExpirationReaper-0-AlterAcls]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
-[36mkafka1             |[0m [2021-01-09 19:50:24,629] INFO ConfluentMetricsReporterConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:24,629] INFO ConfluentMetricsReporterConfig values:
 [36mkafka1             |[0m 	confluent.metrics.reporter.bootstrap.servers = kafka1:9092
 [36mkafka1             |[0m 	confluent.metrics.reporter.include = .*MaxLag.*|kafka.log:type=Log,name=Size.*|.*name=(ActiveControllerCount|BytesInPerSec|BytesOutPerSec|CaughtUpReplicasCount|FailedFetchRequestsPerSec|FailedProduceRequestsPerSec|InSyncReplicasCount|LeaderCount|LeaderElectionRateAndTimeMs|LocalTimeMs|LogEndOffset|LogStartOffset|NetworkProcessorAvgIdlePercent|NumLogSegments|NumPartitionsInError|OfflinePartitionsCount|ObserverReplicasCount|PartitionCount|RemoteTimeMs|ReplicasCount|RequestHandlerAvgIdlePercent|RequestQueueSize|RequestQueueTimeMs|RequestsPerSec|ResponseQueueSize|ResponseQueueTimeMs|ResponseSendTimeMs|Size|TierSize|TotalFetchRequestsPerSec|TotalLag|TotalProduceRequestsPerSec|TotalSize|TotalTimeMs|UncleanLeaderElectionsPerSec|UnderReplicated|UnderReplicatedPartitions|UnderMinIsrPartitionCount|ZooKeeperDisconnectsPerSec|ZooKeeperExpiresPerSec).*|.*(BytesFetchedRate).*
 [36mkafka1             |[0m 	confluent.metrics.reporter.publish.ms = 15000
@@ -832,7 +832,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.metrics.reporter.volume.metrics.refresh.ms = 15000
 [36mkafka1             |[0m 	confluent.metrics.reporter.whitelist = null
 [36mkafka1             |[0m  (io.confluent.metrics.reporter.ConfluentMetricsReporterConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:25,028] INFO ProducerConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:25,028] INFO ProducerConfig values:
 [36mkafka1             |[0m 	acks = -1
 [36mkafka1             |[0m 	batch.size = 16384
 [36mkafka1             |[0m 	bootstrap.servers = [kafka1:9092]
@@ -907,7 +907,7 @@ Attaching to kafka1
 [36mkafka1             |[0m [2021-01-09 19:50:25,631] INFO Starting Confluent metrics reporter for cluster id VVoXKnO1RKKKeAWg2zUUqg with an interval of 15000 ms (io.confluent.metrics.reporter.ConfluentMetricsReporter)
 [36mkafka1             |[0m [2021-01-09 19:50:26,222] WARN no telemetry exporters are enabled (io.confluent.telemetry.ConfluentTelemetryConfig)
 [36mkafka1             |[0m [2021-01-09 19:50:26,848] WARN Ignoring redefinition of existing telemetry label kafka.version (io.confluent.shaded.io.confluent.telemetry.ResourceBuilderFacade)
-[36mkafka1             |[0m [2021-01-09 19:50:26,914] INFO ConfluentTelemetryConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:26,914] INFO ConfluentTelemetryConfig values:
 [36mkafka1             |[0m 	confluent.telemetry.api.key = null
 [36mkafka1             |[0m 	confluent.telemetry.api.secret = null
 [36mkafka1             |[0m 	confluent.telemetry.debug.enabled = false
@@ -920,10 +920,10 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.telemetry.proxy.url = null
 [36mkafka1             |[0m 	confluent.telemetry.proxy.username = null
 [36mkafka1             |[0m  (io.confluent.telemetry.ConfluentTelemetryConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:26,920] INFO VolumeMetricsCollectorConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:26,920] INFO VolumeMetricsCollectorConfig values:
 [36mkafka1             |[0m 	confluent.telemetry.metrics.collector.volume.update.ms = 15000
 [36mkafka1             |[0m  (io.confluent.telemetry.collector.VolumeMetricsCollector$VolumeMetricsCollectorConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:26,934] INFO HttpExporterConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:26,934] INFO HttpExporterConfig values:
 [36mkafka1             |[0m 	api.key = null
 [36mkafka1             |[0m 	api.secret = null
 [36mkafka1             |[0m 	buffer.batch.duration.max.ms = null
@@ -943,7 +943,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	proxy.username = null
 [36mkafka1             |[0m 	type = http
 [36mkafka1             |[0m  (io.confluent.telemetry.exporter.http.HttpExporterConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:26,955] INFO KafkaExporterConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:26,955] INFO KafkaExporterConfig values:
 [36mkafka1             |[0m 	enabled = true
 [36mkafka1             |[0m 	metrics.include = .*bytes_in.*|.*bytes_out.*|.*process_cpu_load.*|.*local_time_ms.*|.*log_flush_rate_and_time_ms.*|.*messages_in.*|.*request_handler_avg_idle_percent.*|.*requests.*|.*request_queue_size.*|.*request_queue_time_ms.*|.*response_queue_size.*|.*/log/size|.*total_fetch_requests.*|.*total_produce_requests.*|.*total_time_ms.*|.*replication_bytes_in.*|.*replication_bytes_out.*|.*disk_total_bytes.*
 [36mkafka1             |[0m 	producer.bootstrap.servers = kafka1:19092
@@ -958,7 +958,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	type = kafka
 [36mkafka1             |[0m  (io.confluent.telemetry.exporter.kafka.KafkaExporterConfig)
 [36mkafka1             |[0m [2021-01-09 19:50:27,194] INFO Creating kafka exporter named '_local' (io.confluent.telemetry.reporter.TelemetryReporter)
-[36mkafka1             |[0m [2021-01-09 19:50:27,479] INFO ProducerConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:27,479] INFO ProducerConfig values:
 [36mkafka1             |[0m 	acks = -1
 [36mkafka1             |[0m 	batch.size = 16384
 [36mkafka1             |[0m 	bootstrap.servers = [kafka1:19092]
@@ -1035,13 +1035,13 @@ Attaching to kafka1
 [36mkafka1             |[0m [2021-01-09 19:50:28,247] INFO [SocketServer brokerId=0] Started data-plane acceptor and processor(s) for endpoint : ListenerName(PLAINTEXT) (kafka.network.SocketServer)
 [36mkafka1             |[0m [2021-01-09 19:50:28,260] INFO [SocketServer brokerId=0] Started data-plane acceptor and processor(s) for endpoint : ListenerName(PLAINTEXT_HOST) (kafka.network.SocketServer)
 [36mkafka1             |[0m [2021-01-09 19:50:28,261] INFO [SocketServer brokerId=0] Started socket server acceptors and processors (kafka.network.SocketServer)
-[36mkafka1             |[0m [2021-01-09 19:50:28,427] INFO KafkaHttpServerConfig values: 
-[36mkafka1             |[0m 	access.control.allow.headers = 
-[36mkafka1             |[0m 	access.control.allow.methods = 
-[36mkafka1             |[0m 	access.control.allow.origin = 
+[36mkafka1             |[0m [2021-01-09 19:50:28,427] INFO KafkaHttpServerConfig values:
+[36mkafka1             |[0m 	access.control.allow.headers =
+[36mkafka1             |[0m 	access.control.allow.methods =
+[36mkafka1             |[0m 	access.control.allow.origin =
 [36mkafka1             |[0m 	access.control.skip.options = true
 [36mkafka1             |[0m 	authentication.method = NONE
-[36mkafka1             |[0m 	authentication.realm = 
+[36mkafka1             |[0m 	authentication.realm =
 [36mkafka1             |[0m 	authentication.roles = [*]
 [36mkafka1             |[0m 	authentication.skip.paths = []
 [36mkafka1             |[0m 	compression.enable = true
@@ -1059,7 +1059,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	request.queue.capacity.growby = 64
 [36mkafka1             |[0m 	request.queue.capacity.init = 128
 [36mkafka1             |[0m 	resource.extension.classes = []
-[36mkafka1             |[0m 	response.http.headers.config = 
+[36mkafka1             |[0m 	response.http.headers.config =
 [36mkafka1             |[0m 	response.mediatype.default = application/json
 [36mkafka1             |[0m 	response.mediatype.preferred = [application/json]
 [36mkafka1             |[0m 	rest.servlet.initializor.classes = []
@@ -1070,16 +1070,16 @@ Attaching to kafka1
 [36mkafka1             |[0m 	ssl.enabled.protocols = []
 [36mkafka1             |[0m 	ssl.endpoint.identification.algorithm = null
 [36mkafka1             |[0m 	ssl.key.password = [hidden]
-[36mkafka1             |[0m 	ssl.keymanager.algorithm = 
-[36mkafka1             |[0m 	ssl.keystore.location = 
+[36mkafka1             |[0m 	ssl.keymanager.algorithm =
+[36mkafka1             |[0m 	ssl.keystore.location =
 [36mkafka1             |[0m 	ssl.keystore.password = [hidden]
 [36mkafka1             |[0m 	ssl.keystore.reload = false
 [36mkafka1             |[0m 	ssl.keystore.type = JKS
-[36mkafka1             |[0m 	ssl.keystore.watch.location = 
+[36mkafka1             |[0m 	ssl.keystore.watch.location =
 [36mkafka1             |[0m 	ssl.protocol = TLS
-[36mkafka1             |[0m 	ssl.provider = 
-[36mkafka1             |[0m 	ssl.trustmanager.algorithm = 
-[36mkafka1             |[0m 	ssl.truststore.location = 
+[36mkafka1             |[0m 	ssl.provider =
+[36mkafka1             |[0m 	ssl.trustmanager.algorithm =
+[36mkafka1             |[0m 	ssl.truststore.location =
 [36mkafka1             |[0m 	ssl.truststore.password = [hidden]
 [36mkafka1             |[0m 	ssl.truststore.type = JKS
 [36mkafka1             |[0m 	thread.pool.max = 200
@@ -1089,13 +1089,13 @@ Attaching to kafka1
 [36mkafka1             |[0m  (io.confluent.http.server.KafkaHttpServerConfig)
 [36mkafka1             |[0m [2021-01-09 19:50:28,646] INFO [Producer clientId=confluent-metrics-reporter] Cluster ID: VVoXKnO1RKKKeAWg2zUUqg (org.apache.kafka.clients.Metadata)
 [36mkafka1             |[0m [2021-01-09 19:50:28,647] INFO [Producer clientId=confluent-telemetry-reporter-local-producer] Cluster ID: VVoXKnO1RKKKeAWg2zUUqg (org.apache.kafka.clients.Metadata)
-[36mkafka1             |[0m [2021-01-09 19:50:28,673] INFO RestConfig values: 
-[36mkafka1             |[0m 	access.control.allow.headers = 
-[36mkafka1             |[0m 	access.control.allow.methods = 
-[36mkafka1             |[0m 	access.control.allow.origin = 
+[36mkafka1             |[0m [2021-01-09 19:50:28,673] INFO RestConfig values:
+[36mkafka1             |[0m 	access.control.allow.headers =
+[36mkafka1             |[0m 	access.control.allow.methods =
+[36mkafka1             |[0m 	access.control.allow.origin =
 [36mkafka1             |[0m 	access.control.skip.options = true
 [36mkafka1             |[0m 	authentication.method = NONE
-[36mkafka1             |[0m 	authentication.realm = 
+[36mkafka1             |[0m 	authentication.realm =
 [36mkafka1             |[0m 	authentication.roles = [*]
 [36mkafka1             |[0m 	authentication.skip.paths = []
 [36mkafka1             |[0m 	compression.enable = true
@@ -1113,7 +1113,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	request.queue.capacity.growby = 64
 [36mkafka1             |[0m 	request.queue.capacity.init = 128
 [36mkafka1             |[0m 	resource.extension.classes = []
-[36mkafka1             |[0m 	response.http.headers.config = 
+[36mkafka1             |[0m 	response.http.headers.config =
 [36mkafka1             |[0m 	response.mediatype.default = application/json
 [36mkafka1             |[0m 	response.mediatype.preferred = [application/json]
 [36mkafka1             |[0m 	rest.servlet.initializor.classes = []
@@ -1124,16 +1124,16 @@ Attaching to kafka1
 [36mkafka1             |[0m 	ssl.enabled.protocols = []
 [36mkafka1             |[0m 	ssl.endpoint.identification.algorithm = null
 [36mkafka1             |[0m 	ssl.key.password = [hidden]
-[36mkafka1             |[0m 	ssl.keymanager.algorithm = 
-[36mkafka1             |[0m 	ssl.keystore.location = 
+[36mkafka1             |[0m 	ssl.keymanager.algorithm =
+[36mkafka1             |[0m 	ssl.keystore.location =
 [36mkafka1             |[0m 	ssl.keystore.password = [hidden]
 [36mkafka1             |[0m 	ssl.keystore.reload = false
 [36mkafka1             |[0m 	ssl.keystore.type = JKS
-[36mkafka1             |[0m 	ssl.keystore.watch.location = 
+[36mkafka1             |[0m 	ssl.keystore.watch.location =
 [36mkafka1             |[0m 	ssl.protocol = TLS
-[36mkafka1             |[0m 	ssl.provider = 
-[36mkafka1             |[0m 	ssl.trustmanager.algorithm = 
-[36mkafka1             |[0m 	ssl.truststore.location = 
+[36mkafka1             |[0m 	ssl.provider =
+[36mkafka1             |[0m 	ssl.trustmanager.algorithm =
+[36mkafka1             |[0m 	ssl.truststore.location =
 [36mkafka1             |[0m 	ssl.truststore.password = [hidden]
 [36mkafka1             |[0m 	ssl.truststore.type = JKS
 [36mkafka1             |[0m 	thread.pool.max = 200
@@ -1144,14 +1144,14 @@ Attaching to kafka1
 [36mkafka1             |[0m [2021-01-09 19:50:28,733] INFO Logging initialized @24879ms to org.eclipse.jetty.util.log.Slf4jLog (org.eclipse.jetty.util.log)
 [36mkafka1             |[0m [2021-01-09 19:50:28,761] INFO Loaded Application class io.confluent.metadataapi.app.MetadataApiApplication. (io.confluent.http.server.KafkaHttpApplicationLoader)
 [36mkafka1             |[0m [2021-01-09 19:50:28,765] INFO Application from provider RbacApplicationProvider is disabled. Skipping. (io.confluent.http.server.KafkaHttpApplicationLoader)
-[36mkafka1             |[0m [2021-01-09 19:50:28,803] INFO KafkaConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:28,803] INFO KafkaConfig values:
 [36mkafka1             |[0m 	advertised.host.name = null
 [36mkafka1             |[0m 	advertised.listeners = PLAINTEXT://kafka1:19092,PLAINTEXT_HOST://kafka1:9092
 [36mkafka1             |[0m 	advertised.port = null
 [36mkafka1             |[0m 	alter.config.policy.class.name = null
 [36mkafka1             |[0m 	alter.log.dirs.replication.quota.window.num = 11
 [36mkafka1             |[0m 	alter.log.dirs.replication.quota.window.size.seconds = 1
-[36mkafka1             |[0m 	authorizer.class.name = 
+[36mkafka1             |[0m 	authorizer.class.name =
 [36mkafka1             |[0m 	auto.create.topics.enable = true
 [36mkafka1             |[0m 	auto.leader.rebalance.enable = true
 [36mkafka1             |[0m 	background.threads = 10
@@ -1164,7 +1164,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	compression.type = producer
 [36mkafka1             |[0m 	confluent.append.record.interceptor.classes = []
 [36mkafka1             |[0m 	confluent.apply.create.topic.policy.to.create.partitions = false
-[36mkafka1             |[0m 	confluent.authorizer.authority.name = 
+[36mkafka1             |[0m 	confluent.authorizer.authority.name =
 [36mkafka1             |[0m 	confluent.backpressure.disk.enable = false
 [36mkafka1             |[0m 	confluent.backpressure.disk.free.threshold.bytes = 21474836480
 [36mkafka1             |[0m 	confluent.backpressure.disk.produce.bytes.per.second = 131072
@@ -1198,12 +1198,12 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.http.server.start.timeout.ms = 30000
 [36mkafka1             |[0m 	confluent.http.server.stop.timeout.ms = 30000
 [36mkafka1             |[0m 	confluent.internal.rest.server.bind.port = null
-[36mkafka1             |[0m 	confluent.log.placement.constraints = 
+[36mkafka1             |[0m 	confluent.log.placement.constraints =
 [36mkafka1             |[0m 	confluent.metadata.server.cluster.registry.clusters = []
 [36mkafka1             |[0m 	confluent.missing.id.cache.ttl.sec = 60
 [36mkafka1             |[0m 	confluent.missing.id.query.range = 200
 [36mkafka1             |[0m 	confluent.multitenant.listener.names = null
-[36mkafka1             |[0m 	confluent.offsets.topic.placement.constraints = 
+[36mkafka1             |[0m 	confluent.offsets.topic.placement.constraints =
 [36mkafka1             |[0m 	confluent.operator.managed = false
 [36mkafka1             |[0m 	confluent.prefer.tier.fetch.ms = -1
 [36mkafka1             |[0m 	confluent.quota.tenant.broker.max.consumer.rate = 13107200
@@ -1218,7 +1218,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.schema.registry.url = http://schema-registry:8081
 [36mkafka1             |[0m 	confluent.security.event.logger.authentication.enable = false
 [36mkafka1             |[0m 	confluent.security.event.logger.enable = true
-[36mkafka1             |[0m 	confluent.security.event.router.config = 
+[36mkafka1             |[0m 	confluent.security.event.router.config =
 [36mkafka1             |[0m 	confluent.segment.speculative.prefetch.enable = false
 [36mkafka1             |[0m 	confluent.ssl.key.password = null
 [36mkafka1             |[0m 	confluent.ssl.keystore.location = null
@@ -1229,7 +1229,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.ssl.truststore.password = null
 [36mkafka1             |[0m 	confluent.ssl.truststore.type = null
 [36mkafka1             |[0m 	confluent.tier.archiver.num.threads = 2
-[36mkafka1             |[0m 	confluent.tier.backend = 
+[36mkafka1             |[0m 	confluent.tier.backend =
 [36mkafka1             |[0m 	confluent.tier.enable = false
 [36mkafka1             |[0m 	confluent.tier.feature = false
 [36mkafka1             |[0m 	confluent.tier.fenced.segment.delete.delay.ms = 600000
@@ -1240,7 +1240,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.tier.fetcher.offset.cache.size = 200000
 [36mkafka1             |[0m 	confluent.tier.gcs.bucket = null
 [36mkafka1             |[0m 	confluent.tier.gcs.cred.file.path = null
-[36mkafka1             |[0m 	confluent.tier.gcs.prefix = 
+[36mkafka1             |[0m 	confluent.tier.gcs.prefix =
 [36mkafka1             |[0m 	confluent.tier.gcs.region = null
 [36mkafka1             |[0m 	confluent.tier.gcs.write.chunk.size = 0
 [36mkafka1             |[0m 	confluent.tier.local.hotset.bytes = -1
@@ -1260,13 +1260,13 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.tier.s3.aws.signer.override = null
 [36mkafka1             |[0m 	confluent.tier.s3.bucket = null
 [36mkafka1             |[0m 	confluent.tier.s3.cred.file.path = null
-[36mkafka1             |[0m 	confluent.tier.s3.prefix = 
+[36mkafka1             |[0m 	confluent.tier.s3.prefix =
 [36mkafka1             |[0m 	confluent.tier.s3.region = null
 [36mkafka1             |[0m 	confluent.tier.s3.sse.algorithm = AES256
 [36mkafka1             |[0m 	confluent.tier.s3.sse.customer.encryption.key = null
 [36mkafka1             |[0m 	confluent.tier.segment.hotset.roll.min.bytes = 104857600
 [36mkafka1             |[0m 	confluent.tier.topic.delete.check.interval.ms = 10800000
-[36mkafka1             |[0m 	confluent.transaction.state.log.placement.constraints = 
+[36mkafka1             |[0m 	confluent.transaction.state.log.placement.constraints =
 [36mkafka1             |[0m 	confluent.verify.group.subscription.prefix = false
 [36mkafka1             |[0m 	connection.failed.authentication.delay.ms = 100
 [36mkafka1             |[0m 	connections.max.idle.ms = 600000
@@ -1293,7 +1293,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	group.max.session.timeout.ms = 1800000
 [36mkafka1             |[0m 	group.max.size = 2147483647
 [36mkafka1             |[0m 	group.min.session.timeout.ms = 6000
-[36mkafka1             |[0m 	host.name = 
+[36mkafka1             |[0m 	host.name =
 [36mkafka1             |[0m 	inter.broker.listener.name = null
 [36mkafka1             |[0m 	inter.broker.protocol.version = 2.6-IV0
 [36mkafka1             |[0m 	kafka.metrics.polling.interval.secs = 10
@@ -1344,7 +1344,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	log.segment.delete.delay.ms = 60000
 [36mkafka1             |[0m 	max.connections = 2147483647
 [36mkafka1             |[0m 	max.connections.per.ip = 2147483647
-[36mkafka1             |[0m 	max.connections.per.ip.overrides = 
+[36mkafka1             |[0m 	max.connections.per.ip.overrides =
 [36mkafka1             |[0m 	max.incremental.fetch.session.cache.slots = 1000
 [36mkafka1             |[0m 	message.max.bytes = 1048588
 [36mkafka1             |[0m 	metric.reporters = [io.confluent.metrics.reporter.ConfluentMetricsReporter]
@@ -1474,44 +1474,44 @@ Attaching to kafka1
 [36mkafka1             |[0m 	zookeeper.ssl.truststore.type = null
 [36mkafka1             |[0m 	zookeeper.sync.time.ms = 2000
 [36mkafka1             |[0m  (kafka.server.KafkaConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:29,038] INFO KafkaRestConfig values: 
-[36mkafka1             |[0m 	access.control.allow.headers = 
-[36mkafka1             |[0m 	access.control.allow.methods = 
-[36mkafka1             |[0m 	access.control.allow.origin = 
+[36mkafka1             |[0m [2021-01-09 19:50:29,038] INFO KafkaRestConfig values:
+[36mkafka1             |[0m 	access.control.allow.headers =
+[36mkafka1             |[0m 	access.control.allow.methods =
+[36mkafka1             |[0m 	access.control.allow.origin =
 [36mkafka1             |[0m 	access.control.skip.options = true
 [36mkafka1             |[0m 	advertised.listeners = []
 [36mkafka1             |[0m 	api.v2.enable = false
 [36mkafka1             |[0m 	api.v3.enable = true
 [36mkafka1             |[0m 	authentication.method = NONE
-[36mkafka1             |[0m 	authentication.realm = 
+[36mkafka1             |[0m 	authentication.realm =
 [36mkafka1             |[0m 	authentication.roles = [*]
 [36mkafka1             |[0m 	authentication.skip.paths = []
 [36mkafka1             |[0m 	bootstrap.servers = kafka1:19092
 [36mkafka1             |[0m 	client.init.timeout.ms = 60000
 [36mkafka1             |[0m 	client.sasl.kerberos.kinit.cmd = /usr/bin/kinit
 [36mkafka1             |[0m 	client.sasl.kerberos.min.time.before.relogin = 60000
-[36mkafka1             |[0m 	client.sasl.kerberos.service.name = 
+[36mkafka1             |[0m 	client.sasl.kerberos.service.name =
 [36mkafka1             |[0m 	client.sasl.kerberos.ticket.renew.jitter = 0.05
 [36mkafka1             |[0m 	client.sasl.kerberos.ticket.renew.window.factor = 0.8
 [36mkafka1             |[0m 	client.sasl.mechanism = GSSAPI
 [36mkafka1             |[0m 	client.security.protocol = PLAINTEXT
-[36mkafka1             |[0m 	client.ssl.cipher.suites = 
+[36mkafka1             |[0m 	client.ssl.cipher.suites =
 [36mkafka1             |[0m 	client.ssl.enabled.protocols = TLSv1.2,TLSv1.1,TLSv1
-[36mkafka1             |[0m 	client.ssl.endpoint.identification.algorithm = 
+[36mkafka1             |[0m 	client.ssl.endpoint.identification.algorithm =
 [36mkafka1             |[0m 	client.ssl.key.password = [hidden]
 [36mkafka1             |[0m 	client.ssl.keymanager.algorithm = SunX509
-[36mkafka1             |[0m 	client.ssl.keystore.location = 
+[36mkafka1             |[0m 	client.ssl.keystore.location =
 [36mkafka1             |[0m 	client.ssl.keystore.password = [hidden]
 [36mkafka1             |[0m 	client.ssl.keystore.type = JKS
 [36mkafka1             |[0m 	client.ssl.protocol = TLS
-[36mkafka1             |[0m 	client.ssl.provider = 
+[36mkafka1             |[0m 	client.ssl.provider =
 [36mkafka1             |[0m 	client.ssl.trustmanager.algorithm = PKIX
-[36mkafka1             |[0m 	client.ssl.truststore.location = 
+[36mkafka1             |[0m 	client.ssl.truststore.location =
 [36mkafka1             |[0m 	client.ssl.truststore.password = [hidden]
 [36mkafka1             |[0m 	client.ssl.truststore.type = JKS
 [36mkafka1             |[0m 	client.timeout.ms = 500
 [36mkafka1             |[0m 	compression.enable = true
-[36mkafka1             |[0m 	confluent.resource.name.authority = 
+[36mkafka1             |[0m 	confluent.resource.name.authority =
 [36mkafka1             |[0m 	consumer.instance.timeout.ms = 300000
 [36mkafka1             |[0m 	consumer.iterator.backoff.ms = 50
 [36mkafka1             |[0m 	consumer.iterator.timeout.ms = 1
@@ -1520,8 +1520,8 @@ Attaching to kafka1
 [36mkafka1             |[0m 	consumer.threads = 50
 [36mkafka1             |[0m 	debug = false
 [36mkafka1             |[0m 	fetch.min.bytes = -1
-[36mkafka1             |[0m 	host.name = 
-[36mkafka1             |[0m 	id = 
+[36mkafka1             |[0m 	host.name =
+[36mkafka1             |[0m 	id =
 [36mkafka1             |[0m 	idle.timeout.ms = 30000
 [36mkafka1             |[0m 	kafka.rest.resource.extension.class = [io.confluent.kafkarest.KafkaRestResourceExtension]
 [36mkafka1             |[0m 	listeners = []
@@ -1537,7 +1537,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	request.queue.capacity.growby = 64
 [36mkafka1             |[0m 	request.queue.capacity.init = 128
 [36mkafka1             |[0m 	resource.extension.classes = []
-[36mkafka1             |[0m 	response.http.headers.config = 
+[36mkafka1             |[0m 	response.http.headers.config =
 [36mkafka1             |[0m 	response.mediatype.default = application/json
 [36mkafka1             |[0m 	response.mediatype.preferred = [application/json, application/vnd.kafka.v2+json]
 [36mkafka1             |[0m 	rest.servlet.initializor.classes = []
@@ -1551,16 +1551,16 @@ Attaching to kafka1
 [36mkafka1             |[0m 	ssl.enabled.protocols = []
 [36mkafka1             |[0m 	ssl.endpoint.identification.algorithm = null
 [36mkafka1             |[0m 	ssl.key.password = [hidden]
-[36mkafka1             |[0m 	ssl.keymanager.algorithm = 
-[36mkafka1             |[0m 	ssl.keystore.location = 
+[36mkafka1             |[0m 	ssl.keymanager.algorithm =
+[36mkafka1             |[0m 	ssl.keystore.location =
 [36mkafka1             |[0m 	ssl.keystore.password = [hidden]
 [36mkafka1             |[0m 	ssl.keystore.reload = false
 [36mkafka1             |[0m 	ssl.keystore.type = JKS
-[36mkafka1             |[0m 	ssl.keystore.watch.location = 
+[36mkafka1             |[0m 	ssl.keystore.watch.location =
 [36mkafka1             |[0m 	ssl.protocol = TLS
-[36mkafka1             |[0m 	ssl.provider = 
-[36mkafka1             |[0m 	ssl.trustmanager.algorithm = 
-[36mkafka1             |[0m 	ssl.truststore.location = 
+[36mkafka1             |[0m 	ssl.provider =
+[36mkafka1             |[0m 	ssl.trustmanager.algorithm =
+[36mkafka1             |[0m 	ssl.truststore.location =
 [36mkafka1             |[0m 	ssl.truststore.password = [hidden]
 [36mkafka1             |[0m 	ssl.truststore.type = JKS
 [36mkafka1             |[0m 	thread.pool.max = 200
@@ -1568,7 +1568,7 @@ Attaching to kafka1
 [36mkafka1             |[0m 	websocket.path.prefix = /ws
 [36mkafka1             |[0m 	websocket.servlet.initializor.classes = []
 [36mkafka1             |[0m  (io.confluent.kafkarest.KafkaRestConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:29,048] INFO ConfluentTelemetryConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:29,048] INFO ConfluentTelemetryConfig values:
 [36mkafka1             |[0m 	confluent.telemetry.api.key = null
 [36mkafka1             |[0m 	confluent.telemetry.api.secret = null
 [36mkafka1             |[0m 	confluent.telemetry.debug.enabled = false
@@ -1581,10 +1581,10 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.telemetry.proxy.url = null
 [36mkafka1             |[0m 	confluent.telemetry.proxy.username = null
 [36mkafka1             |[0m  (io.confluent.telemetry.ConfluentTelemetryConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:29,050] INFO VolumeMetricsCollectorConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:29,050] INFO VolumeMetricsCollectorConfig values:
 [36mkafka1             |[0m 	confluent.telemetry.metrics.collector.volume.update.ms = 15000
 [36mkafka1             |[0m  (io.confluent.telemetry.collector.VolumeMetricsCollector$VolumeMetricsCollectorConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:29,055] INFO HttpExporterConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:29,055] INFO HttpExporterConfig values:
 [36mkafka1             |[0m 	api.key = null
 [36mkafka1             |[0m 	api.secret = null
 [36mkafka1             |[0m 	buffer.batch.duration.max.ms = null
@@ -1606,7 +1606,7 @@ Attaching to kafka1
 [36mkafka1             |[0m  (io.confluent.telemetry.exporter.http.HttpExporterConfig)
 [36mkafka1             |[0m [2021-01-09 19:50:29,055] WARN no telemetry exporters are enabled (io.confluent.telemetry.ConfluentTelemetryConfig)
 [36mkafka1             |[0m [2021-01-09 19:50:29,057] WARN Ignoring redefinition of existing telemetry label kafka_rest.version (io.confluent.shaded.io.confluent.telemetry.ResourceBuilderFacade)
-[36mkafka1             |[0m [2021-01-09 19:50:29,059] INFO ConfluentTelemetryConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:29,059] INFO ConfluentTelemetryConfig values:
 [36mkafka1             |[0m 	confluent.telemetry.api.key = null
 [36mkafka1             |[0m 	confluent.telemetry.api.secret = null
 [36mkafka1             |[0m 	confluent.telemetry.debug.enabled = false
@@ -1619,10 +1619,10 @@ Attaching to kafka1
 [36mkafka1             |[0m 	confluent.telemetry.proxy.url = null
 [36mkafka1             |[0m 	confluent.telemetry.proxy.username = null
 [36mkafka1             |[0m  (io.confluent.telemetry.ConfluentTelemetryConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:29,060] INFO VolumeMetricsCollectorConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:29,060] INFO VolumeMetricsCollectorConfig values:
 [36mkafka1             |[0m 	confluent.telemetry.metrics.collector.volume.update.ms = 15000
 [36mkafka1             |[0m  (io.confluent.telemetry.collector.VolumeMetricsCollector$VolumeMetricsCollectorConfig)
-[36mkafka1             |[0m [2021-01-09 19:50:29,064] INFO HttpExporterConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:29,064] INFO HttpExporterConfig values:
 [36mkafka1             |[0m 	api.key = null
 [36mkafka1             |[0m 	api.secret = null
 [36mkafka1             |[0m 	buffer.batch.duration.max.ms = null
@@ -1814,10 +1814,10 @@ Attaching to kafka1
 [36mkafka1             |[0m [2021-01-09 19:50:40,599] INFO [Partition _confluent_balancer_partition_samples-9 broker=0] No checkpointed highwatermark is found for partition _confluent_balancer_partition_samples-9 (kafka.cluster.Partition)
 [36mkafka1             |[0m [2021-01-09 19:50:40,608] INFO [Partition _confluent_balancer_partition_samples-9 broker=0] Log loaded for partition _confluent_balancer_partition_samples-9 with initial high watermark 0 (kafka.cluster.Partition)
 [36mkafka1             |[0m [2021-01-09 19:50:40,613] INFO [Broker id=0] Follower _confluent_balancer_partition_samples-9 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (state.change.logger)
-[36mkafka1             |[0m [2021-01-09 19:50:40,795] INFO AdminClientConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:40,795] INFO AdminClientConfig values:
 [36mkafka1             |[0m 	bootstrap.servers = [kafka1:9092]
 [36mkafka1             |[0m 	client.dns.lookup = use_all_dns_ips
-[36mkafka1             |[0m 	client.id = 
+[36mkafka1             |[0m 	client.id =
 [36mkafka1             |[0m 	connections.max.idle.ms = 300000
 [36mkafka1             |[0m 	default.api.timeout.ms = 60000
 [36mkafka1             |[0m 	metadata.max.age.ms = 300000
@@ -2209,7 +2209,7 @@ Attaching to kafka1
 [36mkafka1             |[0m [2021-01-09 19:50:51,740] INFO [Log partition=_confluent_balancer_broker_samples-0, dir=/var/lib/kafka/data] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
 [36mkafka1             |[0m [2021-01-09 19:50:51,750] INFO [MergedLog partition=_confluent_balancer_broker_samples-0, dir=/var/lib/kafka/data] Completed load of log with 1 segments containing 1 local segments and 0 tiered segments, tier start offset 0, first untiered offset 0, local start offset 0, log end offset 0 (kafka.log.MergedLog)
 [36mkafka1             |[0m Jan 09, 2021 7:50:51 PM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
-[36mkafka1             |[0m WARNING: A provider io.confluent.metadataapi.resources.MetadataResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.metadataapi.resources.MetadataResource will be ignored. 
+[36mkafka1             |[0m WARNING: A provider io.confluent.metadataapi.resources.MetadataResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.metadataapi.resources.MetadataResource will be ignored.
 [36mkafka1             |[0m [2021-01-09 19:50:51,760] INFO Created log for partition _confluent_balancer_broker_samples-0 in /var/lib/kafka/data/_confluent_balancer_broker_samples-0 with properties {compression.type -> producer, min.insync.replicas -> 1, message.downconversion.enable -> true, confluent.missing.id.cache.ttl.sec -> 60, segment.jitter.ms -> 0, cleanup.policy -> delete, flush.ms -> 9223372036854775807, confluent.tier.local.hotset.ms -> 86400000, confluent.tier.local.hotset.bytes -> -1, segment.bytes -> 1073741824, retention.ms -> 12000000, flush.messages -> 9223372036854775807, confluent.append.record.interceptor.classes -> [], confluent.tier.enable -> false, message.format.version -> 2.6-IV0, confluent.tier.segment.hotset.roll.min.bytes -> 104857600, confluent.segment.speculative.prefetch.enable -> false, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, confluent.schema.registry.url -> http://schema-registry:8081, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, confluent.schema.registry.max.cache.size -> 10000, retention.bytes -> -1, delete.retention.ms -> 86400000, confluent.missing.id.query.range -> 200, confluent.prefer.tier.fetch.ms -> -1, confluent.schema.registry.max.retries -> 1, segment.ms -> 604800000, confluent.schema.registry.retries.wait.ms -> 0, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
 [36mkafka1             |[0m [2021-01-09 19:50:51,770] INFO [Partition _confluent_balancer_broker_samples-0 broker=0] No checkpointed highwatermark is found for partition _confluent_balancer_broker_samples-0 (kafka.cluster.Partition)
 [36mkafka1             |[0m [2021-01-09 19:50:51,770] INFO [Partition _confluent_balancer_broker_samples-0 broker=0] Log loaded for partition _confluent_balancer_broker_samples-0 with initial high watermark 0 (kafka.cluster.Partition)
@@ -2418,10 +2418,10 @@ Attaching to kafka1
 [36mkafka1             |[0m org.apache.kafka.common.errors.UnknownTopicOrPartitionException: This server does not host this topic-partition.
 [36mkafka1             |[0m [2021-01-09 19:50:55,502] INFO [ReplicaFetcher replicaId=0, leaderId=1, fetcherId=0] Truncating partition _schemas-0 to local high watermark 0 (kafka.server.ReplicaFetcherThread)
 [36mkafka1             |[0m [2021-01-09 19:50:55,502] INFO [Log partition=_schemas-0, dir=/var/lib/kafka/data] Truncating to 0 has no effect as the largest offset in the log is -1 (kafka.log.Log)
-[36mkafka1             |[0m [2021-01-09 19:50:55,616] INFO AdminClientConfig values: 
+[36mkafka1             |[0m [2021-01-09 19:50:55,616] INFO AdminClientConfig values:
 [36mkafka1             |[0m 	bootstrap.servers = [kafka1:9092]
 [36mkafka1             |[0m 	client.dns.lookup = use_all_dns_ips
-[36mkafka1             |[0m 	client.id = 
+[36mkafka1             |[0m 	client.id =
 [36mkafka1             |[0m 	connections.max.idle.ms = 300000
 [36mkafka1             |[0m 	default.api.timeout.ms = 60000
 [36mkafka1             |[0m 	metadata.max.age.ms = 300000
