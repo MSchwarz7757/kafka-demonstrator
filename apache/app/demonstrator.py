@@ -20,8 +20,8 @@ def delivery_report(err, msg):
 
 class Demonstrator:
 
-    def __init__(self, broker_url, registry_url, topic):
-        self.broker_url = broker_url
+    def __init__(self, broker_urls, registry_url, topic):
+        self.broker_urls = broker_urls
         self.registry_url = registry_url
 
         if topic == "login":
@@ -35,7 +35,7 @@ class Demonstrator:
             self.key_schema = schema_mouse
 
         self.avroProducer = AvroProducer({
-            'bootstrap.servers': self.broker_url,
+            'bootstrap.servers': self.broker_urls,
             'on_delivery': delivery_report,
             'schema.registry.url': self.registry_url,
         }, default_key_schema=self.key_schema, default_value_schema=self.value_schema)
@@ -50,7 +50,7 @@ class Demonstrator:
             print("Port is not open")
         a_socket.close()
 
-    def produceMessage(self,topic,value,key):
+    def produceMessage(self, topic, value, key):
         self.avroProducer.produce(topic=topic, value=value, key=key)
         self.avroProducer.flush()
 
@@ -68,5 +68,3 @@ class Demonstrator:
                 print("Topic {} created".format(topic))
             except Exception as e:
                 print("Failed to create topic {}: {}".format(topic, e))
-
-

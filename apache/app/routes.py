@@ -4,25 +4,25 @@ import os
 from app.demonstrator import Demonstrator
 
 # create a confluent-kafka instance
-app.config['BROKER_URL'] = os.environ.get("BROKER_URL")
+app.config['BROKER_URLS'] = os.environ.get("BROKER_URLS")
 app.config['SCHEMA_REGISTRY_URL'] = os.environ.get("SCHEMA_REGISTRY_URL")
-my_login = Demonstrator(app.config["BROKER_URL"], app.config["SCHEMA_REGISTRY_URL"],"login")
-my_messages = Demonstrator(app.config["BROKER_URL"], app.config["SCHEMA_REGISTRY_URL"], "message")
-my_mouse = Demonstrator(app.config["BROKER_URL"], app.config["SCHEMA_REGISTRY_URL"], "mouse")
+my_login = Demonstrator(app.config["BROKER_URLS"], app.config["SCHEMA_REGISTRY_URL"],"login")
+my_messages = Demonstrator(app.config["BROKER_URLS"], app.config["SCHEMA_REGISTRY_URL"], "message")
+my_mouse = Demonstrator(app.config["BROKER_URLS"], app.config["SCHEMA_REGISTRY_URL"], "mouse")
 
 @app.route('/')
 def index():
     """Startup event"""
     # Kafka goes here
 
-    return render_template('index.html', broker_url=app.config['BROKER_URL'], schema_url=app.config['SCHEMA_REGISTRY_URL'])
+    return render_template('index.html', broker_urls=app.config['BROKER_URLS'], schema_url=app.config['SCHEMA_REGISTRY_URL'])
 
 @app.route('/login', methods=['POST'])
 def login():
     """Single user login event"""
 
     user = request.form['name']
-    my_login.produceMessage("user",{"ID":1234567,"username":user},{"ID":1234567,"username":user})
+    my_login.produceMessage("user",{"ID": 1,"username":user},{"ID": 1,"username":user})
 
     return render_template('user.html', user=user)
 
