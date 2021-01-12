@@ -6,31 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demonstrator</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <a href="/">
-        <h1>Demonstrator</h1>
-    </a>
+<body class="border-t-8" style="border-color:#e60028">
+    <div class="container mx-auto my-auto">
+        <a href="/">
+            <h1 class="text-3xl">Demonstrator</h1>
+        </a>
 
-    <h2>Hello {{ user }} </h2>
+        <h2 class="text-lg">Hello {{ user }} </h2>
 
-    <form>
-        <label for="message">New message:</label>
-        <input name="message" placeholder="Your message" required>
-        <button href=# id=send>Send</button>
-    </form>
+        <form class="mb-4">
+            <div class="flex my-4 items-center">
+                <label for="message" class="pr-2">New message:</label>
+                <input class=" border rounded border-gray-400 p-2" name="message" placeholder="Your message" required>
+            </div>
 
-    <form>
-        <label for="last_message">Last message:</label>
-        <output name="last_message">"<span id=last_message>No messages</span>"</output>
-    </form>
+            <button class="mt-4 py-2 px-4 rounded bg-gray-200" id=send>Send</button>
+        </form>
 
-    <form>
-        <label for="num_messages">Number of messages:</label>
-        <output name="num_messages"><span id=num_messages>0</span></output>
-    </form>
+        <form>
+            <label for="last_message">Last message:</label>
+            <output name="last_message">"<span id=last_message class="italic">No messages</span>"</output>
+        </form>
 
+        <form>
+            <label for="num_messages">Number of messages:</label>
+            <output name="num_messages"><span class="italic" id=num_messages>0</span></output>
+        </form>
+    </div>
     <script type=text/javascript>
         var num_messages = 0
         $(document).on('ready', function() {

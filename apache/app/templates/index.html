@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demonstrator</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <a href="/">
-        <h1>Demonstrator</h1>
-    </a>
-    <form action="/login" method="POST">
-        <label for="name">Name:</label>
-        <input name="name" required>
-        <input type="submit" value="Login">
-    </form>
+
+<body class="border-t-8" style="border-color:#e60028">
+    <div class="container mx-auto my-auto">
+        <a href="/">
+            <h1 class="text-3xl">Demonstrator</h1>
+        </a>
+        <h2 class="text-lg">BROKER: <span class="font-light italic">{{ broker_urls }}</span> </h2>
+        <h2 class="text-lg">SCHEMA-REGISTRY: <span class="font-light italic">{{ schema_url }}</span> </h2>
+        <form action="/login" method="POST">
+            <div class="flex my-4 items-center">
+                <label for="name" class="pr-2">Name:</label>
+                <input class="border rounded border-gray-400 p-2 bg-gray-200" name="name" required>
+            </div>
+            <input class="mt-4 py-2 px-4 rounded" type="submit" value="Login">
+        </form>
+    </div>
 </body>
+
 </html>
