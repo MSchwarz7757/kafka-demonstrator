@@ -1,46 +1,13 @@
 from confluent_kafka import avro
 from confluent_kafka.avro import AvroProducer
+from confluent_kafka.admin import AdminClient, NewTopic
+import avro.schema
 import socket
 
-value_schema_str = """
-{
-  "type": "record",
-  "namespace": "VKSDemo",
-  "name": "OrderDetail",
-  "fields": [
-    {
-      "name": "ID",
-      "type": "long",
-      "doc": "The user ID"
-    },
-    {
-      "name": "username",
-      "type": "string",
-      "doc": "The users name"
-    }
-  ]
-}
-"""
 
-key_schema_str = """
-{
-  "type": "record",
-  "namespace": "VKSDemo",
-  "name": "OrderDetail",
-  "fields": [
-    {
-      "name": "ID",
-      "type": "long",
-      "doc": "The user ID"
-    },
-    {
-      "name": "username",
-      "type": "string",
-      "doc": "The users name"
-    }
-  ]
-}
-"""
+schema_login = avro.schema.parse(open("/var/www/apache-flask/app/schema/user_login.avsc", "rb").read())
+schema_message = avro.schema.parse(open("/var/www/apache-flask/app/schema/user_message.avsc", "rb").read())
+schema_mouse = avro.schema.parse(open("/var/www/apache-flask/app/schema/user_mouse.avsc", "rb").read())
 
 def delivery_report(err, msg):
     """ Called once for each message produced to indicate delivery result.
@@ -50,24 +17,28 @@ def delivery_report(err, msg):
     else:
         print('Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
 
+
 class Demonstrator:
-    value_schema = avro.loads(value_schema_str)
-    key_schema = avro.loads(key_schema_str)
 
-
-    def __init__(self, broker_url, registry_url):
+    def __init__(self, broker_url, registry_url, topic):
         self.broker_url = broker_url
         self.registry_url = registry_url
 
+        if topic == "login":
+            self.value_schema = schema_login
+            self.key_schema = schema_login
+        if topic == "message":
+            self.value_schema = schema_message
+            self.key_schema = schema_message
+        if topic == "mouse":
+            self.value_schema = schema_mouse
+            self.key_schema = schema_mouse
+
         self.avroProducer = AvroProducer({
-            'bootstrap.servers': broker_url,
+            'bootstrap.servers': self.broker_url,
             'on_delivery': delivery_report,
-            'schema.registry.url': registry_url,
+            'schema.registry.url': self.registry_url,
         }, default_key_schema=self.key_schema, default_value_schema=self.value_schema)
-
-        #value = {"ID": 2343438, "username": "Michel"}
-        #key = {"ID": 2343438, "username": "Michel"}
-
 
     def checkLocation(self, loc,port):
         a_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -80,9 +51,22 @@ class Demonstrator:
         a_socket.close()
 
     def produceMessage(self,topic,value,key):
-        print(self)
-        print(topic)
-        print(value)
-        print(key)
         self.avroProducer.produce(topic=topic, value=value, key=key)
         self.avroProducer.flush()
+
+
+    def createTopic(self, *topic1, partitions, replication):
+        a = AdminClient({'bootstrap.servers': self.broker_url})
+
+        new_topics = [NewTopic(topic, num_partitions=int(partitions), replication_factor=int(replication)) for topic in [topic1]]
+
+        fs = a.create_topics(new_topics)
+
+        for topic, f in fs.items():
+            try:
+                f.result()
+                print("Topic {} created".format(topic))
+            except Exception as e:
+                print("Failed to create topic {}: {}".format(topic, e))
+
+
